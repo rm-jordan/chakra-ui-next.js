@@ -14,8 +14,10 @@ import {
 
 const Cart = () => {
   const { toggleColorMode } = useColorMode();
-  const bgColor = useColorModeValue('gray.50', 'whiteAlpha.50');
+  const bgColor = useColorModeValue('gray.50', 'whiteAlpha.50'); 
+  // large colour change
   const secondaryTextColor = useColorModeValue('gray.600', 'gray.400');
+  // secondary text colour change (useColorModeValue) <-chakra UI specific value
   return (
     <VStack
       w="full"
@@ -80,4 +82,4 @@ const Cart = () => {
 export default Cart;
 
 //py = padding y axis
-      // bg = background "gray.50" <- design token from chakra UI
+ // bg = background "gray.50" <- design token from chakra UI

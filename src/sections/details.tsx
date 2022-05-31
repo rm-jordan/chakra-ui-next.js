@@ -1,37 +1,43 @@
-import { VStack , Heading, Text, SimpleGrid, GridItem, FormControl, FormLabel, Input, Select, Checkbox, Button} from "@chakra-ui/react";
+import { VStack , Heading, Text, SimpleGrid, GridItem, FormControl, FormLabel, Input, Select, Checkbox, Button, useBreakpointValue} from "@chakra-ui/react";
+
+//useBreakpointValue = responsive hook 
+// responsive 3 ways array syntax, object syntax and hook syntax
 
 const Details = () => {
+
+  const colSpan = useBreakpointValue({base:2, md:1});
+
   return (
   <VStack w="full" h="full" p={10} spacing={10} alignItems="flex-start">
     <VStack spacing={3} alignItems="flex-start">
       <Heading size="2xl">Your details</Heading>
         <Text> If you already have an account, click here to log in.</Text>
         <SimpleGrid columns={2} columnGap={3} rowGap={6} width="full">
-          <GridItem colSpan={1}>
+          <GridItem colSpan={colSpan}>
             <FormControl>
               <FormLabel>First Name</FormLabel>
               <Input placeholder="Ryan" />
             </FormControl>
           </GridItem>
-          <GridItem colSpan={1}>
+          <GridItem colSpan={colSpan}>
             <FormControl>
               <FormLabel>Last Name</FormLabel>
               <Input placeholder="Jordan" />
             </FormControl>
           </GridItem>
-          <GridItem colSpan={2}>
+          <GridItem colSpan={colSpan}>
             <FormControl>
               <FormLabel>Address</FormLabel>
               <Input placeholder="123 Your Place Pl." />
             </FormControl>
           </GridItem>
-          <GridItem colSpan={1}>
+          <GridItem colSpan={colSpan}>
             <FormControl>
               <FormLabel>City</FormLabel>
               <Input placeholder="Pawnee" />
             </FormControl>
           </GridItem>
-          <GridItem colSpan={1}>
+          <GridItem colSpan={colSpan}>
             <FormControl>
               <FormLabel>Country</FormLabel>
                 <Select>
@@ -46,7 +52,7 @@ const Details = () => {
             <Checkbox defaultChecked>Ship to billing address</Checkbox>
           </GridItem>
           <GridItem colSpan={2}>
-            <Button size='lg' width='full'>Place Order
+            <Button colorScheme="brand" size='lg' width='full'>Place Order
             </Button>
           </GridItem>
         </SimpleGrid>

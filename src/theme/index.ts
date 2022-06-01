@@ -7,6 +7,27 @@ const theme = extendTheme({
     heading: `Montserrat ${base.fonts?.heading}`,
     body: `Inter ${base.fonts?.body}`,
   },
+  // used to override specific styles within Chakra UI
+  components : {
+    Input: {
+      variants: {
+        filled: {
+          field: {
+            _focus: {
+              borderColor: 'brand.500',
+            }
+          }
+        }
+      },
+      sizes: {
+        md: {
+          field: {
+            borderRadius: 'none',
+          }
+        }
+      }
+    }
+  },
   colors: {
     brand: {
       50: '#f5fee5',
